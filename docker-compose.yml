@@ -11,6 +11,8 @@ services:
       dockerfile: Dockerfile
     image: chat-app
     restart: unless-stopped
+    environment:
+      NODE_LOCAL_HOST: http://host.docker.internal:3000
     working_dir: /var/www/
     volumes:
       - ./:/var/www
