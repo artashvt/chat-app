@@ -101,7 +101,7 @@ class MessageRepository extends BaseRepository implements MessageRepositoryInter
     {
         $message['room_id'] = generateRoomId($message['receiver_id']);
         $client= new Client();
-        $client->request('POST', env('NODE_HOST') . '/', [
+        $client->request('POST', env('NODE_LOCAL_HOST') . '/', [
             'headers' => [
                 'X-AUTH-TOKEN' => env('NODE_AUTH_TOKEN')
             ],
